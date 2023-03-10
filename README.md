@@ -5,7 +5,7 @@
 You can install the package via composer:
 
 ``` bash
-composer require sudhanshu-mittal/telr
+composer require sudhanshu-mittal/telr-laravel
 ```
 
 
