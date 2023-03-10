@@ -1,5 +1,5 @@
 {
-    "name": "sudhanshu-mittal/telr",
+    "name": "sudhanshu-mittal/telr-laravel",
     "description": "Pay online through telr payment gateway",
     "license": "MIT",
     "type": "library",
