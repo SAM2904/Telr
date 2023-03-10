@@ -5,7 +5,7 @@
 You can install the package via composer:
 
 ``` bash
-composer require laravel_payment/telr
+composer require sudhanshu-mittal/telr
 ```
 
 
@@ -66,8 +66,8 @@ After creating the route place the following code to redirect to bank page
 $telrManager = new \TelrGateway\TelrManager();
 
 $billingParams = [
-        'first_name' => 'Moustafa Gouda',
-        'sur_name' => 'Bafi',
+        'first_name' => 'Robert',
+        'sur_name' => 'Evans',
         'address_1' => 'Gnaklis',
         'address_2' => 'Gnaklis 2',
         'city' => 'Alexandria',
