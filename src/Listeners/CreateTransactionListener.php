@@ -3,21 +3,21 @@
 namespace TelrGateway\Listeners;
 
 use TelrGateway\Events\TelrCreateRequestEvent;
-use TelrGateway\Transaction;
+use TelrGateway\TelrTransaction;
 
 class CreateTransactionListener
 {
     /**
-     * @var \TelrGateway\Transaction
+     * @var \TelrGateway\TelrTransaction
      */
     protected $model;
 
     /**
      * CreateTransactionListener constructor.
      *
-     * @param \TelrGateway\Transaction $model
+     * @param \TelrGateway\TelrTransaction $model
      */
-    public function __construct(Transaction $model)
+    public function __construct(TelrTransaction $model)
     {
         $this->model = $model;
     }
@@ -54,4 +54,3 @@ class CreateTransactionListener
         ]);
     }
 }
-

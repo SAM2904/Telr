@@ -4,14 +4,14 @@ namespace TelrGateway;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
+class TelrTransaction extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'transaction';
+    protected $table = 'telr_transactions';
 
     /**
      * The primary key for the model.
@@ -93,6 +93,6 @@ class Transaction extends Model
      */
     public function isFailed()
     {
-        return ! $this->isApproved();
+        return !$this->isApproved();
     }
 }

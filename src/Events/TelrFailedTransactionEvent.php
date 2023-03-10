@@ -2,12 +2,12 @@
 
 namespace TelrGateway\Events;
 
-use TelrGateway\Transaction;
+use TelrGateway\TelrTransaction;
 
 class TelrFailedTransactionEvent
 {
     /**
-     * @var Transaction
+     * @var TelrTransaction
      */
     public $transaction;
 
@@ -19,10 +19,10 @@ class TelrFailedTransactionEvent
     /**
      * SuccessTransactionEvent constructor.
      *
-     * @param Transaction $transaction
+     * @param TelrTransaction $transaction
      * @param \stdClass $response
      */
-    public function __construct(Transaction $transaction, \stdClass $response)
+    public function __construct(TelrTransaction $transaction, \stdClass $response)
     {
         $this->transaction = $transaction;
         $this->response = $response;

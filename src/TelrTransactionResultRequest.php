@@ -7,16 +7,16 @@ use Illuminate\Contracts\Support\Arrayable;
 class TelrTransactionResultRequest extends AbstractTelrRequest implements Arrayable
 {
     /**
-     * @var \TelrGateway\Transaction
+     * @var \TelrGateway\TelrTransaction
      */
     protected $transaction;
 
     /**
      * TelrTransactionResultRequest constructor.
      *
-     * @param \TelrGateway\Transaction $transaction
+     * @param \TelrGateway\TelrTransaction $transaction
      */
-    public function __construct(Transaction $transaction)
+    public function __construct(TelrTransaction $transaction)
     {
         $this->transaction = $transaction;
         $this->setMethod('check');

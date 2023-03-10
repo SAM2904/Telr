@@ -13,7 +13,7 @@ class CreateTelrTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaction', function (Blueprint $table) {
+        Schema::create('telr_transactions', function (Blueprint $table) {
             $table->string('cart_id', 63)->primary()->comment = 'The unique cart id to be submit for telr';
             $table->integer('order_id')->nullable()->comment = 'Should be the foreign key for items';
             $table->integer('store_id')->comment = 'Map to ivp_store';
@@ -32,7 +32,7 @@ class CreateTelrTransactionsTable extends Migration
             $table->string('billing_zip')->nullable()->comment = 'Billing zip';
             $table->string('billing_country')->nullable()->comment = 'Billing country';
             $table->string('billing_email')->nullable()->comment = 'Billing email';
-            $table->string('lang_code')->nullable()->comment = 'Transaction Request lang';
+            $table->string('lang_code')->nullable()->comment = 'TelrTransaction Request lang';
             $table->string('trx_reference')->nullable()->comment = 'The transaction reference';
             $table->boolean('approved')->nullable()->comment = 'The transaction status is approved or failed';
             $table->json('response')->nullable()->comment = 'The transaction response';
@@ -48,6 +48,6 @@ class CreateTelrTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('telr_transactions');
     }
 }

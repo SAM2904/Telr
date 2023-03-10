@@ -31,7 +31,7 @@ class TelrManager
 
         // Associate billing params to fields
         foreach ($billingParams as $key => $value) {
-            $methodName = ('setBilling'.Str::studly($key));
+            $methodName = ('setBilling' . Str::studly($key));
             if (method_exists($createTelrRequest, $methodName)) {
                 $createTelrRequest->$methodName($value);
             }
@@ -57,7 +57,7 @@ class TelrManager
 
         // Validate if response has error messages
         if (isset($result->error)) {
-            throw new \Exception($result->error->message.'. Note: '.$result->error->message);
+            throw new \Exception($result->error->message . '. Note: ' . $result->error->message);
         }
         // Dispatch event
         event(new TelrCreateRequestEvent($createRequest, $result));
@@ -69,19 +69,19 @@ class TelrManager
      * Fetch the transaction result
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Database\Eloquent\ModelNotFoundException|Transaction
+     * @return \Illuminate\Database\Eloquent\ModelNotFoundException|TelrTransaction
      * @throws \Exception
      */
     public function handleTransactionResponse(Request $request)
     {
-        $transaction = Transaction::findOrFail($request->cart_id);
+        $transaction = TelrTransaction::findOrFail($request->cart_id);
         $trxResultRequest = new TelrTransactionResultRequest($transaction);
 
         $result = $this->callTelrServer($trxResultRequest->getEndPointURL(), $trxResultRequest->toArray());
 
         // Validate if response has error messages
         if (isset($result->error)) {
-            throw new \Exception($result->error->message.'. Note: '.$result->error->note);
+            throw new \Exception($result->error->message . '. Note: ' . $result->error->note);
         }
 
         // Dispatch event for after receiving telr response
@@ -121,7 +121,7 @@ class TelrManager
 
         // Validate if response is equal 200
         if (200 != $result->getStatusCode()) {
-            throw new ClientException('The response is '.$result->getStatusCode());
+            throw new ClientException('The response is ' . $result->getStatusCode());
         }
 
         // Convert json response into object
