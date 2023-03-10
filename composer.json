@@ -1,5 +1,5 @@
 {
-    "name": "laravel_payment/telr",
+    "name": "sudhanshu-mittal/telr",
     "description": "Pay online through telr payment gateway",
     "license": "MIT",
     "type": "library",
@@ -9,12 +9,10 @@
         "telr payment",
         "telr"
     ],
-    "authors": [
-        {
-            "name": "Moustafa Gouda",
-            "email": "mgouda@arkdev.net"
-        }
-    ],
+    "authors": [{
+        "name": "Sudhanshu Mittal",
+        "email": "mittalsudhanshu29@gmail.com"
+    }],
     "autoload": {
         "psr-4": {
             "TelrGateway\\": "src/"
