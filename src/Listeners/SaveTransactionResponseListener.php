@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway\Listeners;
+namespace SudhanshuMittal\TelrGateway\Listeners;
 
 use TelrGateway\Events\TelrSuccessTransactionEvent;
 use TelrGateway\Events\TelrFailedTransactionEvent;
@@ -15,4 +15,3 @@ class SaveTransactionResponseListener
         $event->transaction->fill(['response' => $event->response, 'status' => 1])->save();
     }
 }
-

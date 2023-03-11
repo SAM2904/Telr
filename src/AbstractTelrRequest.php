@@ -1,8 +1,8 @@
 <?php
 
-namespace TelrGateway;
+namespace SudhanshuMittal\TelrGateway;
 
-Abstract class AbstractTelrRequest
+abstract class AbstractTelrRequest
 {
     protected $data;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway;
+namespace SudhanshuMittal\TelrGateway;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use TelrGateway\Events\TelrCreateRequestEvent;

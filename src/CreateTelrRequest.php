@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway;
+namespace SudhanshuMittal\TelrGateway;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Ramsey\Uuid\Uuid;
@@ -19,7 +19,7 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
     {
         $this->setOrderId($orderId);
         $this->setAmount($amount);
-        $this->setCartId(Uuid::uuid4()->toString().'-'.time());
+        $this->setCartId(Uuid::uuid4()->toString() . '-' . time());
     }
 
     /**
@@ -380,7 +380,7 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
         $url = url($url);
         $query = parse_url($url, PHP_URL_QUERY);
 
-        return $url .= ($query ? '&' : '?')."cart_id={$orderId}";
+        return $url .= ($query ? '&' : '?') . "cart_id={$orderId}";
     }
 
     /**

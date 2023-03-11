@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway\Events;
+namespace SudhanshuMittal\TelrGateway\Events;
 
 use TelrGateway\CreateTelrRequest;
 

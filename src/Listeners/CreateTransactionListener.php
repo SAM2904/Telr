@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway\Listeners;
+namespace SudhanshuMittal\TelrGateway\Listeners;
 
 use TelrGateway\Events\TelrCreateRequestEvent;
 use TelrGateway\TelrTransaction;

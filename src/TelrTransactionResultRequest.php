@@ -1,6 +1,6 @@
 <?php
 
-namespace TelrGateway;
+namespace SudhanshuMittal\TelrGateway;
 
 use Illuminate\Contracts\Support\Arrayable;
 
