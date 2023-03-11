@@ -3,10 +3,10 @@
 namespace SudhanshuMittal\TelrGateway;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use TelrGateway\Events\TelrCreateRequestEvent;
-use TelrGateway\Events\TelrRecieveTransactionResponseEvent;
-use TelrGateway\Listeners\CreateTransactionListener;
-use TelrGateway\Listeners\SaveTransactionResponseListener;
+use SudhanshuMittal\TelrGateway\Events\TelrCreateRequestEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrRecieveTransactionResponseEvent;
+use SudhanshuMittal\TelrGateway\Listeners\CreateTransactionListener;
+use SudhanshuMittal\TelrGateway\Listeners\SaveTransactionResponseListener;
 
 class EventServiceProvider extends ServiceProvider
 {

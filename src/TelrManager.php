@@ -5,10 +5,10 @@ namespace SudhanshuMittal\TelrGateway;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
-use TelrGateway\Events\TelrCreateRequestEvent;
-use TelrGateway\Events\TelrFailedTransactionEvent;
-use TelrGateway\Events\TelrRecieveTransactionResponseEvent;
-use TelrGateway\Events\TelrSuccessTransactionEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrCreateRequestEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrFailedTransactionEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrRecieveTransactionResponseEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrSuccessTransactionEvent;
 use Str;
 
 class TelrManager
@@ -20,7 +20,7 @@ class TelrManager
      * @param $amount
      * @param $description
      * @param array $billingParams
-     * @return \TelrGateway\CreateTelrRequest
+     * @return \SudhanshuMittal\TelrGateway\CreateTelrRequest
      */
     public function prepareCreateRequest($orderId, $amount, $description, array $billingParams = [])
     {
@@ -47,7 +47,7 @@ class TelrManager
      * @param $amount
      * @param $description
      * @param array $billingParams
-     * @return \TelrGateway\TelrURL
+     * @return \SudhanshuMittal\TelrGateway\TelrURL
      * @throws \Exception
      */
     public function pay($orderId, $amount, $description, array $billingParams = [])

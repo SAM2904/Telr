@@ -15,13 +15,13 @@
     }],
     "autoload": {
         "psr-4": {
-            "TelrGateway\\": "src/"
+            "SudhanshuMittal\\TelrGateway\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "TelrGateway\\TelrServiceProvider"
+                "SudhanshuMittal\\TelrGateway\\TelrServiceProvider"
             ]
         }
     },

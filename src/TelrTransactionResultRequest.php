@@ -7,14 +7,14 @@ use Illuminate\Contracts\Support\Arrayable;
 class TelrTransactionResultRequest extends AbstractTelrRequest implements Arrayable
 {
     /**
-     * @var \TelrGateway\TelrTransaction
+     * @var \SudhanshuMittal\TelrGateway\TelrTransaction
      */
     protected $transaction;
 
     /**
      * TelrTransactionResultRequest constructor.
      *
-     * @param \TelrGateway\TelrTransaction $transaction
+     * @param \SudhanshuMittal\TelrGateway\TelrTransaction $transaction
      */
     public function __construct(TelrTransaction $transaction)
     {
