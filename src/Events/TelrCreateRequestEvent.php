@@ -2,7 +2,7 @@
 
 namespace SudhanshuMittal\TelrGateway\Events;
 
-use TelrGateway\CreateTelrRequest;
+use SudhanshuMittal\TelrGateway\CreateTelrRequest;
 
 class TelrCreateRequestEvent
 {

@@ -2,8 +2,8 @@
 
 namespace SudhanshuMittal\TelrGateway\Listeners;
 
-use TelrGateway\Events\TelrCreateRequestEvent;
-use TelrGateway\TelrTransaction;
+use SudhanshuMittal\TelrGateway\Events\TelrCreateRequestEvent;
+use SudhanshuMittal\TelrGateway\TelrTransaction;
 
 class CreateTransactionListener
 {

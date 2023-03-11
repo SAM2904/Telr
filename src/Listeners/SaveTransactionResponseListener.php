@@ -2,8 +2,8 @@
 
 namespace SudhanshuMittal\TelrGateway\Listeners;
 
-use TelrGateway\Events\TelrSuccessTransactionEvent;
-use TelrGateway\Events\TelrFailedTransactionEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrSuccessTransactionEvent;
+use SudhanshuMittal\TelrGateway\Events\TelrFailedTransactionEvent;
 
 class SaveTransactionResponseListener
 {

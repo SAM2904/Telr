@@ -2,7 +2,7 @@
 
 namespace SudhanshuMittal\TelrGateway\Events;
 
-use TelrGateway\TelrTransaction;
+use SudhanshuMittal\TelrGateway\TelrTransaction;
 
 class TelrFailedTransactionEvent
 {
