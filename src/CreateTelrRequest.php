@@ -380,6 +380,16 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
     }
 
     /**
+     * Get billing lang
+     *
+     * @return string|null
+     */
+    public function getExtraReq()
+    {
+        return data_get($this->data, 'req_params', null);
+    }
+
+    /**
      * Append order id to URL
      *
      * @param $url
@@ -423,6 +433,7 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
             'bill_zip' => $this->getBillingZip(),
             'bill_country' => $this->getBillingCountry(),
             'bill_email' => $this->getBillingEmail(),
+            'req_params' => $this->getExtraReq(),
         ];
     }
 }
