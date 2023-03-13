@@ -77,10 +77,19 @@ $billingParams = [
         'email' => 'example@company.com',
     ];
 
-return $telrManager->pay('ORDER_ID_GOES_HERE', 'TOTAL_AMOUNT', 'DESCRIPTION ...', $billingParams)->redirect();
+$req_params = [
+    'user_id' => 5,
+    'product_id' => 2,
+    'amount' => 500,
+    'short_desc' => 'cart items request payload',
+];
+
+return $telrManager->pay('ORDER_ID_GOES_HERE', 'TOTAL_AMOUNT', 'DESCRIPTION ...', $billingParams, $req_params)->redirect();
 
 ```
 > - note that if you want to avoid sending billing params while creating token to process the payment it's applicable and the `Telr hosted payment page` will require it and will get the customer information on**check**request.
+
+> - Also, if you want to avoid sending request params while creating token to process the payment it's applicable and the `Telr hosted payment page` will not require it. The req_params helps you to know the request payload for which you initiate the transaction.
 
 And on telr callback **(Success|Cancel|Declined)** to handle response put the following code:
 ```php

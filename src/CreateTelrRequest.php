@@ -369,6 +369,17 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
     }
 
     /**
+     * @param $extra_req
+     * @return $this
+     */
+    public function setExtraReq($extra_req)
+    {
+        $this->data['req_params'] = json_encode($extra_req);
+
+        return $this;
+    }
+
+    /**
      * Append order id to URL
      *
      * @param $url

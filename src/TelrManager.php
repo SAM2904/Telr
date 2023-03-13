@@ -20,9 +20,10 @@ class TelrManager
      * @param $amount
      * @param $description
      * @param array $billingParams
+     * @param array $req_params
      * @return \SudhanshuMittal\TelrGateway\CreateTelrRequest
      */
-    public function prepareCreateRequest($orderId, $amount, $description, array $billingParams = [])
+    public function prepareCreateRequest($orderId, $amount, $description, array $billingParams = [], array $req_params = [])
     {
         $createTelrRequest = (new CreateTelrRequest($orderId, $amount))->setDesc($description);
 
@@ -37,6 +38,10 @@ class TelrManager
             }
         }
 
+        if ($req_params) {
+            $createTelrRequest->setExtraReq($req_params);
+        }
+
         return $createTelrRequest;
     }
 
@@ -47,12 +52,13 @@ class TelrManager
      * @param $amount
      * @param $description
      * @param array $billingParams
+     * @param array $req_params
      * @return \SudhanshuMittal\TelrGateway\TelrURL
      * @throws \Exception
      */
-    public function pay($orderId, $amount, $description, array $billingParams = [])
+    public function pay($orderId, $amount, $description, array $billingParams = [], array $req_params = [])
     {
-        $createRequest = $this->prepareCreateRequest($orderId, $amount, $description, $billingParams);
+        $createRequest = $this->prepareCreateRequest($orderId, $amount, $description, $billingParams, $req_params);
         $result = $this->callTelrServer($createRequest->getEndPointURL(), $createRequest->toArray());
 
         // Validate if response has error messages
