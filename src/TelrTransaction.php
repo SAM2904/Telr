@@ -55,6 +55,7 @@ class TelrTransaction extends Model
         'billing_email',
         'lang_code',
         'trx_reference',
+        'req_params',
         'approved',
         'response',
         'status',
