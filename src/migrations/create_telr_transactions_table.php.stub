@@ -35,6 +35,7 @@ class CreateTelrTransactionsTable extends Migration
             $table->string('lang_code')->nullable()->comment = 'TelrTransaction Request lang';
             $table->string('trx_reference')->nullable()->comment = 'The transaction reference';
             $table->boolean('approved')->nullable()->comment = 'The transaction status is approved or failed';
+            $table->json('req_params')->nullable()->comment = 'The transaction request payload';
             $table->json('response')->nullable()->comment = 'The transaction response';
             $table->boolean('status')->default(0)->comment = 'The transaction status is updated or not';
             $table->timestamps();
