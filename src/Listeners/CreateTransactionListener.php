@@ -51,6 +51,7 @@ class CreateTransactionListener
             'billing_email' => $event->telrRequest->getBillingEmail(),
             'lang_code' => $event->telrRequest->getLangCode(),
             'trx_reference' => $event->response->order->ref,
+            'req_params' => $event->telrRequest->getExtraReq(),
         ]);
     }
 }

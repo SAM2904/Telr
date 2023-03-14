@@ -20,10 +20,9 @@ class TelrManager
      * @param $amount
      * @param $description
      * @param array $billingParams
-     * @param array $req_params
      * @return \SudhanshuMittal\TelrGateway\CreateTelrRequest
      */
-    public function prepareCreateRequest($orderId, $amount, $description, array $billingParams = [], array $req_params = [])
+    public function prepareCreateRequest($orderId, $amount, $description, array $billingParams = [])
     {
         $createTelrRequest = (new CreateTelrRequest($orderId, $amount))->setDesc($description);
 
@@ -36,10 +35,6 @@ class TelrManager
             if (method_exists($createTelrRequest, $methodName)) {
                 $createTelrRequest->$methodName($value);
             }
-        }
-
-        if ($req_params) {
-            $createTelrRequest->setExtraReq($req_params);
         }
 
         return $createTelrRequest;
@@ -65,6 +60,11 @@ class TelrManager
         if (isset($result->error)) {
             throw new \Exception($result->error->message . '. Note: ' . $result->error->message);
         }
+
+        if ($req_params) {
+            $createRequest->setExtraReq($req_params);
+        }
+
         // Dispatch event
         event(new TelrCreateRequestEvent($createRequest, $result));
 

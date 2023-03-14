@@ -433,7 +433,6 @@ class CreateTelrRequest extends AbstractTelrRequest implements Arrayable
             'bill_zip' => $this->getBillingZip(),
             'bill_country' => $this->getBillingCountry(),
             'bill_email' => $this->getBillingEmail(),
-            'req_params' => $this->getExtraReq(),
         ];
     }
 }
